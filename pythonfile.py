@@ -1,6 +1,10 @@
 from hashlib import *
-file = open("Capture2.PNG","rb")
-data = file.read()
+try:
+    with open("Capture2.PNG","rb") as file:
+        data = file.read()
+except FileNotFoundError:
+    print("File Capture2.PNG không tồn tại")
+    exit(1)
 md5 = md5()
 sha1 = sha1()
 sha224 = sha224()
